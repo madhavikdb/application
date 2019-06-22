@@ -20,4 +20,4 @@ steps:
 - task: hyscale@0
   inputs:
     application: 'add'
-    applicationName: 'appTest'
+    applicationName: 'pk'
