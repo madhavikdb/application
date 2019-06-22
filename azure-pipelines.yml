@@ -19,5 +19,6 @@ steps:
   displayName: 'Run a multi-line script'
 - task: hyscale@0
   inputs:
-    application: 'add'
-    applicationName: 'kpb'
+    ResourceType: 'Application'
+    ApplicationActions: 'add'
+    ApplicationName: 'ktr'
