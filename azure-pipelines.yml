@@ -40,11 +40,6 @@ steps:
     environment name: 'testenv'
     environment file path: 'hrms/env/file.yaml'
 - task: hyscale@0
-   inputs:
-     ResourceType: 'Stack'
-     Actions: 'add'
-     stack file: 'image/stck/create.json'
-- task: hyscale@0
   inputs:
     Actions: 'deploy'
     ApplicationName for Resources: 'inputTest'
