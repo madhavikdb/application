@@ -19,7 +19,36 @@ steps:
   displayName: 'Run a multi-line script'
 - task: hyscale@0
   inputs:
+    ResourceType: 'Login'
+    username and password: 'user pass'
+- task: hyscale@0
+  inputs:
+    ResourceType: 'Application'
+    Actions: 'add'
+    ApplicationName: 'inputTest'
+- task: hyscale@0
+  inputs:
     ResourceType: 'Service'
     Actions: 'add'
-    ApplicationName for Resurces: 'mom'
-    serviceFile: '/empty/test/mom'
+    ApplicationName for Resources: 'inputTest'
+    serviceFile: 'hrms/service/specs.json'
+- task: hyscale@0
+  inputs:
+    ResourceType: 'Environment'
+    Actions: 'add'
+    ApplicationName for Resources: 'inputTest'
+    environment name: 'testenv'
+    environment file path: 'hrms/env/file.yaml'
+- task: hyscale@0
+   inputs:
+     ResourceType: 'Stack'
+     Actions: 'add'
+     stack file: 'image/stck/create.json'
+- task: hyscale@0
+  inputs:
+    Actions: 'deploy'
+    ApplicationName for Resources: 'inputTest'
+    deploy environment name: 'testenv'
+    deploy mode selection: 'Deploy through files'
+    deployment files: 'frontend/file.json,backend/file.json'
+    deployment props  files: 'props/deploy.yaml'
