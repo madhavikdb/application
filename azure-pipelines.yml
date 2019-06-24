@@ -21,4 +21,4 @@ steps:
   inputs:
     ResourceType: 'Application'
     Actions: 'add'
-    ApplicationName: 'inputTest'
+    ApplicationName: 'madhu'
