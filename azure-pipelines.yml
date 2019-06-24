@@ -22,18 +22,15 @@ steps:
     ResourceType: 'Application'
     Actions: 'add'
     ApplicationName: 'madhu'
-- task: hyscale@0
   inputs:
     ResourceType: 'Service'
     Actions: 'add'
     ApplicationName for Resources: 'madhu'
     serviceFile: 'serivice/spec/frontend.json'
-- task: hyscale@0
   inputs:
     ResourceType: 'Login'
     username: 'mafdhavi.kuppa@wavemaker.com'
     password: 'hbhbshbh'
-- task: hyscale@0
   inputs:
     Actions: 'deploy'
     ApplicationName for Resources: 'madhu'
