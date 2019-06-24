@@ -19,18 +19,34 @@ steps:
   displayName: 'Run a multi-line script'
 - task: hyscale@0
   inputs:
+      ResourceType: 'Login'
+      username: 'mafdhavi.kuppa@wavemaker.com'
+      password: 'hbhbshbh'
+- task: hyscale@0
+  inputs:
     ResourceType: 'Application'
     Actions: 'add'
-    ApplicationName: 'madhu'
+    ApplicationName: 'madhu'  
+- task: hyscale@0
   inputs:
     ResourceType: 'Service'
     Actions: 'add'
     ApplicationName for Resources: 'madhu'
     serviceFile: 'serivice/spec/frontend.json'
+- task: hyscale@0
   inputs:
-    ResourceType: 'Login'
-    username: 'mafdhavi.kuppa@wavemaker.com'
-    password: 'hbhbshbh'
+    ResourceType: 'Service'
+    Actions: 'add'
+    ApplicationName for Resources: 'madhu'
+    serviceFile: 'serivice/spec/db.json'
+- task: hyscale@0
+  inputs:
+    ResourceType: 'Environment'
+    Actions: 'add'
+    ApplicationName for Resources: 'madhu'
+    environment name: 'test'
+    environment file path: 'env/test/file.yaml'
+- task: hyscale@0
   inputs:
     Actions: 'deploy'
     ApplicationName for Resources: 'madhu'
