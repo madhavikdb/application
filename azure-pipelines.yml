@@ -22,3 +22,17 @@ steps:
     ResourceType: 'Application'
     Actions: 'add'
     ApplicationName: 'madhu'
+- task: hyscale@0
+  inputs:
+    ResourceType: 'Service'
+    Actions: 'add'
+    ApplicationName for Resources: 'madhu'
+    serviceFile: 'serivice/spec/frontend.json'
+- task: hyscale@0
+  inputs:
+    Actions: 'deploy'
+    ApplicationName for Resources: 'madhu'
+    deploy environment name: 'test'
+    deploy mode selection: 'Deploy through files'
+    deployment files: 'service/spec/frontend.json,service/spec/db.json'
+    deployment props  files: 'deploy/props.yaml'
