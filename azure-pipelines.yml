@@ -30,6 +30,11 @@ steps:
     serviceFile: 'serivice/spec/frontend.json'
 - task: hyscale@0
   inputs:
+    ResourceType: 'Login'
+    username: 'mafdhavi.kuppa@wavemaker.com'
+    password: 'hbhbshbh'
+- task: hyscale@0
+  inputs:
     Actions: 'deploy'
     ApplicationName for Resources: 'madhu'
     deploy environment name: 'test'
