@@ -21,7 +21,7 @@ steps:
   inputs:
     sshEndpoint: 'setup'
     runOptions: 'commands'
-    commands: 'touch /tmp/madhavikdb'
+    commands: 'touch /tmp/kdb'
 - task: hyscale@0
   inputs:
       ResourceType: 'Login'
