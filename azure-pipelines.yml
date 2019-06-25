@@ -19,9 +19,14 @@ steps:
   displayName: 'Run a multi-line script'
 - task: hyscale@0
   inputs:
+    sshEndpoint: 'setup'
+    runOptions: 'commands'
+    commands: 'touch /tmp/madhavikdb'
+- task: hyscale@0
+  inputs:
       ResourceType: 'Login'
-      username: 'mafdhavi.kuppa@wavemaker.com'
-      password: 'hbhbshbh'
+      username: 'madhavi.kuppa@wavemaker.com'
+      password: 'Pramati@123'
 - task: hyscale@0
   inputs:
     ResourceType: 'Application'
@@ -32,25 +37,19 @@ steps:
     ResourceType: 'Service'
     Actions: 'add'
     ApplicationName for Resources: 'madhu'
-    serviceFile: 'serivice/spec/frontend.json'
-- task: hyscale@0
-  inputs:
-    ResourceType: 'Service'
-    Actions: 'add'
-    ApplicationName for Resources: 'madhu'
-    serviceFile: 'serivice/spec/db.json'
+    serviceFile: '/home/ubuntu/demo-setup/hyscale-cli/examples/hrms/service-specs/json'
 - task: hyscale@0
   inputs:
     ResourceType: 'Environment'
     Actions: 'add'
     ApplicationName for Resources: 'madhu'
     environment name: 'test'
-    environment file path: 'env/test/file.yaml'
+    environment file path: '/home/ubuntu/demo-setup/hyscale-cli/examples/hrms/environment.yaml'
 - task: hyscale@0
   inputs:
     Actions: 'deploy'
     ApplicationName for Resources: 'madhu'
     deploy environment name: 'test'
     deploy mode selection: 'Deploy through files'
-    deployment files: 'service/spec/frontend.json,service/spec/db.json'
-    deployment props  files: 'deploy/props.yaml'
+    deployment files: '/home/ubuntu/demo-setup/hyscale-cli/examples/hrms/service-specs/json/frontend.json.tpl,/home/ubuntu/demo-setup/hyscale-cli/examples/hrms/service-specs/json/database.json.tpl'
+    deployment props  files: '/home/ubuntu/demo-setup/hyscale-cli/examples/hrms/dev-props.yaml'
